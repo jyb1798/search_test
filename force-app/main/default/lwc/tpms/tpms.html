@@ -1,11 +1,7 @@
 <template>
     <lightning-card title="test">
 
-
         <lightning-layout multiple-rows="true" vertical-align="end">
-            <!-- <lightning-layout-item size="1" padding="arround-samll">
-                <lightning-button label="Keyword 검색"></lightning-button>
-            </lightning-layout-item> -->
             <lightning-layout-item size="3" padding="arround-samll">
                 <lightning-input type="search" value={key} onchange={updateKey}></lightning-input>
             </lightning-layout-item>
@@ -17,11 +13,7 @@
 
         <br>
             <lightning-layout multiple-rows="true" vertical-align="end">
-                <!-- <lightning-layout-item size="1" padding="arround-samll">
-                    Categories -->
-                <!-- </lightning-layout-item> -->
                 <lightning-layout-item size="12" padding="arround-samll">
-                    <!-- 포장재규격/ Packaging Specifications (15) -->
                     <lightning-datatable key-field="id" data={accounts} columns={cols}></lightning-datatable>
                 </lightning-layout-item>
 
@@ -31,7 +23,6 @@
 
         <lightning-layout multiple-rows="true" vertical-align="end">
             <lightning-layout-item size="12" padding="arround-samll"> 
-                <!-- 제품포장규격/ Packaging Summary (24) -->
                 <lightning-datatable key-field="id" data={contacts} columns={colums}></lightning-datatable>
             </lightning-layout-item>
 

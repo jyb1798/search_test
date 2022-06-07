@@ -25,7 +25,6 @@ export default class FilteredTable extends NavigationMixin(
     caseNumber = "";
     accountName = "";
     contactName = "";
-    subject = "";
     status = null;
     priority = null;
 
@@ -33,7 +32,6 @@ export default class FilteredTable extends NavigationMixin(
         caseNumber: "$caseNumber",
         accountName: "$accountName",
         contactName: "$contactName",
-        subject: "$subject",
         status: "$status",
         priority: "$priority"
     })
@@ -100,7 +98,6 @@ export default class FilteredTable extends NavigationMixin(
         this.caseNumber = "";
         this.accountName = "";
         this.contactName = "";
-        this.subject = "";
         this.status = null;
         this.priority = null;
         this.searchable = this.data;
@@ -130,11 +127,6 @@ export default class FilteredTable extends NavigationMixin(
                         item.caseData.Status?.toLowerCase() +
                             " " +
                             item.caseData.Status?.toLowerCase()
-                    ) ||
-                    regex.test(
-                        item.caseData.Subject?.toLowerCase() +
-                            " " +
-                            item.caseData.Subject?.toLowerCase()
                     ) ||
                     regex.test(
                         item.caseData.Account?.Name?.toLowerCase() +

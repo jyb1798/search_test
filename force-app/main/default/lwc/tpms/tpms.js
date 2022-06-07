@@ -41,6 +41,7 @@ export default class Tpms extends LightningElement {
 
     cols=[
         {label: '규격번호', fieldName: 'Phone', type: 'phone'},
+        {label: '금액', fieldName: 'AnnualRevenue', type: 'number'},
         {label: '규격명', fieldName: 'Name', type: 'text'},
         {label: '규격종류', fieldName: 'Industry', type: 'text'},
         {label: '작성일', fieldName: 'Phone', type: 'phone'},
@@ -49,6 +50,7 @@ export default class Tpms extends LightningElement {
 
     colums=[
         {label: '규격서번호', fieldName: 'Phone', type: 'phone'},
+        {label: '팩스', fieldName: 'Fax', type: 'Fax'},
         {label: '제품포장규격명', fieldName: 'Name', type: 'text'},
         {label: '생산처', fieldName: 'Email', type: 'text'},
         {label: '최종수정일', fieldName: 'Phone', type: 'phone'},

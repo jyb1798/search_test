@@ -65,16 +65,16 @@
                                     onkeyup={handleKeyUp}
                                 ></lightning-input>
                             </td>
-                            <td scope="col">
+                            <!-- <td scope="col">
                                 <lightning-input
                                     type="text"
                                     variant="standard"
-                                    name="subject"
-                                    value={subject}
-                                    placeholder="주제 검색"
+                                    name="Height__c"
+                                    value={Height__c}
+                                    placeholder="높이"
                                     onkeyup={handleKeyUp}
                                 ></lightning-input>
-                            </td>
+                            </td> -->
                             <td scope="col">
                                 <lightning-combobox
                                     name="status"
@@ -100,7 +100,7 @@
                             <th scope="col">문서번호</th>
                             <th scope="col">문서명</th>
                             <th scope="col">연락처</th>
-                            <th scope="col">주제</th>
+                            <!-- <th scope="col">높이</th> -->
                             <th scope="col">문서종류</th>
                             <th scope="col">상태</th>
                         </tr>
@@ -144,7 +144,7 @@
                                     </a>
                                 </span>
                             </th>
-                            <th scope="row">{item.caseData.Subject}</th>
+                            <!-- <th scope="row">{item.caseData.Height__c}</th> -->
                             <th scope="row">{item.caseData.Status}</th>
                             <th scope="row">{item.caseData.Priority}</th>
                         </tr>

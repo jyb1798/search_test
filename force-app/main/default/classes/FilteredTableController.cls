@@ -2,7 +2,6 @@ public with sharing class FilteredTableController {
     @AuraEnabled(cacheable=true)
     public static List<Case> getCases(
         String caseNumber,
-        String subject,
         String priority,
         String status,
         String accountName,
@@ -11,14 +10,6 @@ public with sharing class FilteredTableController {
         String query;
         String condition = (String.isNotBlank(caseNumber)
             ? 'CaseNumber LIKE \'' + '%' + caseNumber + '%\''
-            : '');
-
-        condition += (String.isNotBlank(subject)
-            ? (String.isNotBlank(condition) ? +' AND ' : '') +
-              ' Subject LIKE \'' +
-              '%' +
-              subject +
-              '%\''
             : '');
 
         condition += (String.isNotBlank(accountName)
@@ -36,6 +27,7 @@ public with sharing class FilteredTableController {
               contactName +
               '%\''
             : '');
+
 
         condition += (String.isNotBlank(status)
             ? (String.isNotBlank(condition) ? +' AND ' : '') +
@@ -56,11 +48,11 @@ public with sharing class FilteredTableController {
         System.debug('condition ' + condition);
         if (String.isNotBlank(condition)) {
             query =
-                'SELECT CaseNumber,Status,Subject,Account.Name,Contact.Name,Priority FROM Case WHERE ' +
+                'SELECT CaseNumber,Status, Account.Name,Contact.Name,Priority FROM Case WHERE ' +
                 condition +
                 ' ORDER BY CaseNumber';
         } else {
-            query = 'SELECT CaseNumber,Status,Subject,Account.Name,Contact.Name,Priority FROM Case ORDER BY CaseNumber LIMIT 200';
+            query = 'SELECT CaseNumber,Status,Account.Name,Contact.Name,Priority FROM Case ORDER BY CaseNumber LIMIT 200';
         }
 
         List<Case> records = Database.query(query);
